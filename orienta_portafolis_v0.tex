@@ -1,0 +1,292 @@
+
+\documentclass[oneside,a4paper,12pt]{refart}
+%% L'amplada del text és el 70% per defecte, es pot canviar amb el commandament:
+\settextfraction{0.8} %on 0.8 és el 80%
+\makeatletter
+
+\newcommand\subsecshape{\leftskip=-0.7\leftmarginwidth %sagna les subseccions
+                     \rightskip=\@flushglue%
+                     \hyphenpenalty=2000}
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2ex \@plus -1ex \@minus -.2ex}%
+                                   {0.5ex \@plus .2ex}%
+                                   {\secshape\normalfont\Large\bfseries\sffamily\textcolor{MidnightBlue}}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-1.5ex\@plus -.5ex \@minus -.2ex}%
+                                     {0.5ex \@plus .2ex}%
+                                     {\subsecshape\normalfont\large\bfseries\sffamily\textcolor{NavyBlue}}}
+                                     
+  \def\@maketitle{%
+    \newpage
+    \null
+    \vskip100pt\longthickrule\vskip1.5em%
+    \let \footnote \thanks
+    {\secshape \parskip\z@ \parindent\z@
+    \Huge\bfseries\sffamily\textcolor{Mahogany} \@title \par}%
+    \vskip1.5em\longthickrule\vskip1.5em%
+    {\normalsize
+      \lineskip .5em%
+      \begin{flushright}%
+        {\large\bfseries\sffamily\textcolor{BrickRed}\@author\par}
+        \vskip 1em%
+        {\sffamily\textcolor{Maroon}\@date}%
+      \end{flushright}\par}%
+    %\vskip 1.5em}
+    \vskip 40pt}
+    
+
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[oneside,a4paper,12pt]{article}
+
+%\usepackage{ample}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% tipus de lletra i codificació
+\usepackage[utf8]{inputenc}
+\usepackage[catalan]{babel}
+\addto\captionscatalan{\renewcommand*{\abstractname}{Objectiu}}
+%\usepackage{bera}
+\usepackage{fouriernc}
+\usepackage{helvet}
+\usepackage{marvosym}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[pdftex]{graphicx}
+\usepackage{eso-pic}
+\usepackage[pdftex,%	paquet per fer aparèixer els colors
+			dvipdfm,%
+			dvipsnames,%
+            svgnames,%
+            usenames,%
+            table]{xcolor}
+%\usepackage[pdftex,usenames,dvipsnames]{color}
+\usepackage{colortbl}					%paquet per acolorir taules
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{lastpage}
+\usepackage{supertabular}
+
+
+\usepackage[%
+  backref=page,%
+  pdfpagelabels=true,%
+  plainpages=false,%
+  hyperindex=true,%
+  hyperfootnotes=true,%
+  hyperfootnotes=true,%
+  colorlinks=true,%
+  linkcolor=NavyBlue,%
+  filecolor=NavyBlue,%
+  anchorcolor=NavyBlue,%
+  urlcolor=NavyBlue,%
+  citecolor=NavyBlue,%
+  runcolor=NavyBlue,%
+  bookmarks=true,%
+  pdfview=FitB,%
+  pdfauthor={Joan Queralt Gil},%
+  pdftex]{hyperref}
+\usepackage{nameref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% peu de pàgina
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\cfoot{
+\begin{center}\tiny\sffamily
+\begin{tabular}{|p{1.2cm}|p{1cm}|p{7cm}|p{1.4cm}|} \hline
+ \multirow{6}{*}{\includegraphics[scale=1.15]{logo_IOC_blanc.jpg}}        &    &   \multirow{6}{*}{\normalsize{Orientacions pel portafolis de GES}}  &    \\
+& Versió: 03  & & Pàgina {\thepage} de  {\pageref{LastPage}}  \\  
+        &    &    &    \\ \cline{2-2}\cline{4-4}
+        &    &     &    \\ % 
+        & Codi:     &   & Tardor 11  \\ 
+    &    &    &    \\ \hline
+\end{tabular}
+\end{center}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headheight}{0pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pàgina del títol
+\author{Institut Obert de Catalunya}
+\title{Orientacions pel portafolis de GES}
+\date{Trimestre de Tardor 11\\versió 0}
+
+%
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%% per a que surtin els accents a les propietats del PDF
+\pdfstringdef{\Titol}{Orientacions pel portafolis de GES. Versió 0}
+\pdfstringdef{\Tema}{tasques del professorat de GES amb el portafolis}%
+\pdfstringdef{\Claus}{portafolis, mòduls, GES, professorat responsable, persona tutora}%
+\hypersetup{pdftitle=\Titol,%
+    pdfsubject=\Tema,%
+    pdfkeywords=\Claus,%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% pàgina del títol
+%%% clava el logo
+\AddToShipoutPicture*
+{%
+\put(100,100)%
+ {\includegraphics[scale=2]{logo_IOC_blanc.jpg}}%[scale=0.2]
+}
+%%%% fa el títol
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%\thispagestyle{empty}
+
+\vspace{2in}
+%\rule{100}{0.4}
+\begin{abstract}
+L'objectiu d'aquestes orientacions és donar directrius al professorat de GES per la introducció del treball dels estudiants amb el portafolis.
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Per què el portafolis?}
+
+%%%%%%%%
+\subsection{Introducció}
+Diu la normativa curricular dels estudis de GES\footnote{\href{http://www.gencat.cat/diari/5496/09294021.htm}{
+Decret 161/2009, de 27 d'octubre, d'ordenació dels ensenyaments de l'educació secundària obligatòria per a les persones adultes}} que els objectius de l'avaluació són:
+\begin{itemize}
+\item Constatar els avenços de l'estudiant.
+\item Detectar les dificultats que puguin aparèixer.
+\item Adoptar les mesures necessàries perquè pugui continuar amb èxit el seu procés d'aprenentatge.
+\end{itemize}
+
+Estem potser més acostumats a tenir en compte els dos darrers punts que no pas el primer que, possiblement, sigui el més interessant des del punt de vista de l'estudiant que es pregunta: \textit{Com progresso en el meu aprenentatge?} Perquè pel perfil dels nostres estudiants (persones adultes amb experiències acadèmiques caduques o fins i tot negatives, baixa autoestima, desconeixement del món acadèmic, etc) un dels aspectes més motivadors és constatar els propis avenços.
+
+També diu la normativa que \textbf{el referent} de l'avaluació dels estudis de GES seran els \textbf{objectius i les competències clau}, que indiquen el sentit general en què ha de progressar cada estudiant.
+
+Per això des dels estudis de GES ens plantegem com avaluar aquest assoliment d'objectius i de competències clau. I hem trobat que la reflexió sobre l'aprenentatge ens pot ajudar força. L'eina per fer aquesta reflexió és el portafolis. Per això proposem que als estudis de GES l'eina fonamental de l'avaluació competencial sigui el portafolis.
+
+%%%%%%%%%%%
+\subsection{El portafolis, l'eina de l'avaluació}
+La visió que hem de tenir del portafolis és que identifica, evidencia i mostra l'aprenentatge competencial de l'estudiant.
+
+Aquest instrument recull les reflexions i produccions que l'estudiant ha triat com a més representatives del seu procés d'aprenentatge. Dins d'aquest portafolis se situen també les qualificacions obtingudes en els mòduls que estan reflectides a l'expedient de l'estudiant. 
+
+Així la qualificació dels mòduls, que fins aquí era el punt de mira de l'avaluació, ara queda desplaçat a l'interior del portafolis com una evidència més a tenir en compte en el moment de l'avaluació final.
+
+En el moment de redactar aquest document a un estudiant al que li queda 1 mòdul suspès per completar el seu itinerari formatiu el solem aprovar per votació de la Junta d'avaluació després de veure l'informe tutorial. Ara bé, si abans de votar poguéssim veure el contingut del seu portafolis segur que tindríem moltes més evidències per aprovar-lo (o no). La normativa permet a la Junta d'avalaució fer una proposta de títol a un estudiant amb 3 mòduls cursats però suspesos, un de cada àmbit. A l'IOC, ara mateix, només ens ho plantegem amb 1 mòdul. Potser quan tinguem a la vista les evidències aportades des del portafolis podrem acostar-nos al que permet la normativa.
+
+%%%%%%%%%%%%%%%%
+\subsection{Què hi ha al portafolis?}
+El portafolis està reconegut com el millor instrument competencial d'avaluació perquè està centrat en l'estudiant, que hi reflecteix el que reflexivament considera destacable del seu procés d'aprenentatge. 
+
+La reflexió en un portafolis ajuda l'estudiant a construir significat perquè és la raó per la qual hi va afegint \textit{artefactes}\footnote{Objecte produït pel treball de l'ésser humà, normalment de mida grossa i fet d'una manera rudimentària, però amb una certa complexitat. DIEC \begin{Large}\Smiley                                                                                                                                                                                                                                                                                                  \end{Large}\\En el nostre cas pot ser un text, una imatge, un vídeo, les entrades del diari,\dots} a mesura que avança el seu aprenentatge. Però insistim,  un portafolis no és sols una col·lecció o una mostra de treballs. Perquè tingui sentit darrera hi ha d'haver l'autoreflexió que fa triar entre la producció pròpia i decidir \textbf{què} es mostra i \textbf{a qui} es mostra.
+
+El portafolis de l'estudiant, doncs, serà una col·lecció d'\textbf{evidències de l'aprenentatge} (materials, activitats, productes,\dots)  estructurades, ordenades i seleccionades pel propi estudiant amb l'objectiu d'explicar-se a ell mateix i als altres l'aprenentatge realitzat, reflexionar sobre el que ha après i facilitar l'autoavaluació i l'avaluació externa. El portafolis serà una eina de màrqueting personal on l'estudiant ha decidit què hi posa.
+
+Així al portafolis s'hi reflecteix:
+\begin{itemize}
+\item \textbf{El procés d'aprenentatge}. S'evidencia a través del \textit{Diari de tutoria}  una evolució que porta cap a un resultat. (Trobareu els detalls a la subsecció~\nameref{diaritutoria})
+\item \textbf{Els  productes elaborats}, la recopilació dels resultats de les diferents activitats fetes al llarg del procés. (Trobareu els detalls a la secció~\nameref{contingut})
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{La tutoria}
+Un cop més la tutoria serà clau en el procés d'incorporació de l'eina portafolis pel paper que hi té la persona tutora.
+
+Als estudis de GES s'assigna una persona tutora a l'estudiant tot just quan aquest es matricula per primera vegada i aquesta persona tutora l'acompanyarà durant tot el seu procés d'aprenentatge. Per aquesta raó ningú millor que la persona tutora per explicar a l'estudiant:
+\begin{itemize}
+\item En què consisteix el portafolis i com s'hi accedeix.
+\item Quina finalitat té: no és una feina immediata sinó que els resultats es veuen a llarg termini.
+\item Els avantatges de tenir un portafolis complet a l'hora de fer l'avaluació final.
+\item Les millors opcions sobre el què hi pot posar i com ho ha de posar.
+\item La possibilitat d'exportar el contingut del seu portafolis un cop acabi els seus estudis a l'IOC i portar-lo a una altra plataforma.
+\end{itemize}
+
+Durant el temps que durin els estudis la persona tutora haurà d'encoratjar i promocionar-ne l'ús i la compleció. El tutor ha de fer veure que amb el portafolis s'aprèn més que no pas sense portafolis. Des dels estudis de GES, i quan tinguem més experiència, haurem d'establir un tipus d'eina que permeti als tutors fer el seguiment del grau de compleció i qualitat dels portafolis dels seus tutorats de manera que la gestió sigui molt senzilla. Probablement el més útil sigui una rúbrica semblant a la que es pot trobar a la pàgina \href{http://tinyurl.com/6zcngk2}{A Generic Rubric for Evaluating ePortfolios}
+
+Què pot passar si un tutor detecta que hi ha un estudiant que no treballa en el seu portafolis? La resposta tutorial serà graduada:
+\begin{itemize}
+\item Si és el primer trimestre de treball amb el portafolis el tutor es posarà en contacte amb l'estudiant interessant-se per les raons per les quals no ha fet la seva feina i proposant-li ajudes tècniques si fos el cas.
+\item Si no és la primera vegada i ja ha tingut algun advertiment infructuós, aleshores la persona tutora farà un darrer missatge en el que deixarà clar que suposa que no hi treballa per manca de temps i que a partir d'aleshores disminueix el nombre de mòduls a matricular.
+\item Si malgrat tot l'estudiant no segueix els consells tutorials, es tindrà en compte la inexistència de portafolis en l'avaluació final dels estudis.
+\end{itemize}
+
+La gestió del portafolis per part de la persona tutora vol dir que aquesta encoratjarà els estudiants perquè hi vagin treballant de manera sistemàtica, especialment en el període entre trimestres. Però ara per ara el portafolis no és una feina obligatòria i si hi ha algun estudiant que no el fa no passarà res, simplement tindrà més difícil superar el curs per la manca d'elements d'avaluació. En el moment de l'avaluació la persona tutora podrà presentar a la Junta d'avaluació el portafolis de l'estudiant per evidenciar l'assoliment de les competències i justificar així les seves propostes tutorials.
+
+La persona tutora ha de poder consultar el portafolis dels seus tutorats accedint-hi amb facilitat. Per això pel moment es demanarà als estudiants 
+
+\begin{itemize}
+ \item Que comparteixin les seves pàgines com a mínim amb els usuaris registrats, tot i que poden fer-les públiques.
+ \item La pàgina on es visualitza el Diari de tutoria ha de ser visible com a mínim per la persona tutora, tot i que s'hauria d'encoratjar la compartició de les reflexions.
+ \item Que posin la URL de la seva col·lecció de pàgines al camp \textit{Pàgina web} del seu perfil d'usuari al campus. D'aquesta manera qualsevol usuari del campus IOC podrà veure'l simplement accedint al perfil de l'estudiant i fent un clic.
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Continguts}
+
+%%%%%%%%%
+	\subsection{El Diari de tutoria}\label{diaritutoria} 
+	
+	Un dels components de el portafolis serà el \textbf{Diari del meu aprenentatge}, un diari reflexiu basat en l'estructura d'un diari l'estudiant va reflectint com avança el seu procés d'aprenentatge trimestre rere trimestre. Ara mateix els estudiants ja fan un tipus molt bàsic de reflexió quan responen l'enquesta de final de trimestre. Es tractaria, doncs, d'aprofundir en aquesta línia.
+	
+	El moment més adient per fer aquestes entrades al Diari és, sens dubte, l'espai de temps que transcorre entre el final d'un trimestre i l'inici del següent. Moltes vegades els estudiants es queixen, i amb certa part de raó, que passen molt de temps sense activitat entre trimestres. Si aquest temps el poguessin omplir amb la dedicació a el portafolis estem segurs que seria molt ben aprofitat.
+	
+	Per mostrar el Diari els estudiants han de crear una pàgina que, si desitgen, poden afegir a la seva col·lecció i mostrar-la a la resta de companys. com a mínim han de crear una pàgina amb el contingut del Diari  i donar permisos de lectura a la persona tutora.
+	
+	L'activitat de tutoria de final del \textit{Mòdul 0 d'Iniciació al campus} ha de ser crear, anomenar i fer la primera entrada del Diari de tutoria i donar-la a conèixer a la persona tutora.
+
+
+
+%%%%%%%%%%
+	\subsection{Les pàgines}
+	
+	Un portafolis estàndard consistirà en una col·lecció de 4 pàgines: 
+\begin{enumerate}
+\item pàgina àmbit comunicació.
+\item pàgina àmbit científic.
+\item pàgina àmbit social.
+\item pàgina Diari de tutoria.
+\end{enumerate}
+
+A més, l'estudiant hi pot afegir aquelles pàgines que cregui convenient. Per exemple: si ha fet el seu CV en algun mòdul pot afegir una cinquena pàgina mostrant-ne els camps més interessants. O si des d'algun mòdul ha creat una pagina per mostrar alguna producció, també la pot afegir.
+
+
+\section{Propostes des dels mòduls}\label{contingut}
+
+El treball amb el portafolis ha d'estar proposat des dels mòduls i coordinat des dels àmbits i la tutoria. Una de les primeres tasques que ens caldrà fer serà graduar i coordinar al si dels àmbits l'itinerari de les propostes de treball que vagin sorgint des dels diferents mòduls. L'objectiu és que l'aprenentatge que es faci en un mòdul tingui ressò en els següents i d'aquesta manera aprofitar al màxim l'esforç tecnològic i reflexiu de l'estudiant. Els resultats d'aquesta coordinació, les evidències mínimes que ha de tenir la pàgina de l'àmbit, quedaran recollits en el PCC de l'àmbit corresponent.
+
+Des de cada mòdul, i així queda reflectit a la \textit{Guia docent} corresponent,  es proposarà una feina que s'ha de fer al portafolis. Recordem que el millor moment per fer-ho és en el període entre trimestres, quan els mòduls són tancats. 
+
+Aquesta feina podria consistir, per exemple, en penjar un treball que un considera més reeixit (ara es perden milers de treballs en els reinicis dels cursos, amb el portafolis es conservaran) explicant el procés de creació: un redacció, la resposta a un pregunta complexa, una fotografia, el \textit{meu primer full de càlcul}, una imatge retocada, etc. També es podria proposar que, en lloc d'escriure, es gravi la reflexió en pròpia veu (en un fitxer d'àudio) o la pròpia imatge (en un fitxer de vídeo) explicant el que s'ha après en aquell curs, etc. Es tracta de proposar algun encàrrec que impedeixi que el treball al portafolis es faci de forma mecànica, repetitiva o sense originalitat i que realment permeti l'estudiant pensar en el que està fent.
+
+A la \textit{Guia d'estudi} del mòdul i des del principi de trimestre l'estudiant ha de poder trobar informació relativa a la proposta que se li fa per el portafolis i si cal a mig trimestre començar a guardar feines que després exposarà. Aquesta proposta de treball ha de variar d'un trimestre al següent per evitar que es mecanitzi el treball al portafolis.
+
+\end{document}
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont\sffamily
+    {\Huge \@title\par}%
+    \vskip 1cm
+    {\LARGE \@author\par}%
+    \vskip 1cm
+    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
